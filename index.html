@@ -37,6 +37,7 @@
       
           var router = new Router();
           router.on('route:home',function(){
+            console.log('show on console');
             userList.render();
           });
           Backbone.history.start();
