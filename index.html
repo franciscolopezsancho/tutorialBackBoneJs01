@@ -18,11 +18,18 @@
       <script src='http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js'></script>
       <script>
         
+        var Users = Backbone.Collection.extend({
+          url:'/users'
+        })      
         var UserList = Backbone.View.extend({
           el: '.page',
-          render: function() {
-            this.$el.html('CONTENT SHOULD SHOW HERE!');
-          }
+          var that = this;
+          var users = new Users();
+          users.fetch({
+          success: function() {
+           that.$el.html('CONTENT SHOULD SHOW HERE!');
+           }
+          })
         }); 
         
         
