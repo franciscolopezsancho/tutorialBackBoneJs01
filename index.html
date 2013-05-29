@@ -3,10 +3,7 @@
     <meta charset='utf-8'>
     <title>my first backbone</title>
     <link rel='stylesheet' href='css/bootstrap.min.css'>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js'></script>
-      <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js'></script>
-      <script src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js'></script>
-  </head>
+ </head>
   <body>
   <div class='container'>
     <h1>User Management</h1>
@@ -16,6 +13,21 @@
     </div>
   </div>  
   </body>
+      <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js'></script>
+      <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js'></script>
+      <script src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js'></script>
+      <script>
+        var Router = Backbone.Router.extend({
+          routes: {
+            '':'home'
+          }; 
+          var router = new Router();
+          router.on('route:home',function(){
+            console.log('We have loaded home page');
+          });
+          Backbone.history.start();
+        })
+      </script> 
 </html>
     
 
